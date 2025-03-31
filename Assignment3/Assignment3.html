@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Styling Assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Assignment3.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">CSS3 Demo</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Welcome to Our CSS3 Showcase</h1>
+        <p>Explore modern CSS with animations, transitions, and responsive design techniques.</p>
+        <a href="#features" class="btn">Discover More</a>
+    </section>
+
+    <section class="container" id="features">
+        <h2 class="section-title">CSS3 Features</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1528&q=80" alt="Animation">
+                <div class="card-content">
+                    <h3>Animations</h3>
+                    <p>Create smooth animations using @keyframes and transition properties.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1470&q=80" alt="Flexbox">
+                <div class="card-content">
+                    <h3>Flexbox & Grid</h3>
+                    <p>Modern layout techniques that simplify responsive design.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1374&q=80" alt="Variables">
+                <div class="card-content">
+                    <h3>CSS Variables</h3>
+                    <p>Implement dark mode with reusable CSS variables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <p class="copyright">© 2025 CSS3 Styling Assignment. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+    </script>
+</body>
+</html>
